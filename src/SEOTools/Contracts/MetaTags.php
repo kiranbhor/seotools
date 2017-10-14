@@ -30,7 +30,7 @@ interface MetaTags
      *
      * @return MetaTags
      */
-    public function setTitle($title, $appendDefault = true);
+    public function setTitle($title, $appendDefault = false);
 
     /**
      * Sets the default title tag.

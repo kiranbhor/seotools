@@ -38,9 +38,9 @@ class SEOTools implements SEOContract
      *
      * @return \Artesaos\SEOTools\Contracts\SEOTools
      */
-    public function setTitle($title)
+    public function setTitle($title, $appendDefault = false)
     {
-        $this->metatags()->setTitle($title);
+        $this->metatags()->setTitle($title, false);
         $this->opengraph()->setTitle($title);
         $this->twitter()->setTitle($title);
 
@@ -127,5 +127,20 @@ class SEOTools implements SEOContract
         $html .= $this->twitter()->generate();
 
         return ($minify) ? str_replace(PHP_EOL, '', $html) : $html;
+    }
+
+      /**
+     * Setup title for all seo providers.
+     *
+     * @param string $title
+     *
+     * @return \Artesaos\SEOTools\Contracts\SEOTools
+     */
+    public function setKeywords($keywords)
+    {
+        $this->metatags()->setKeywords($keywords);
+        
+
+        return $this;
     }
 }

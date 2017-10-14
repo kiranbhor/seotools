@@ -31,7 +31,7 @@ interface SEOTools
      *
      * @return \Artesaos\SEOTools\Contracts\SEOTools
      */
-    public function setTitle($title);
+    public function setTitle($title, $appendDefault = false);
 
     /**
      * Setup description for all seo providers.
@@ -77,4 +77,5 @@ interface SEOTools
      * @return string
      */
     public function generate($minify = false);
+    public function setKeywords($keywords);
 }
